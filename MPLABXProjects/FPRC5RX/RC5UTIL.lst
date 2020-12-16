@@ -1,0 +1,3149 @@
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;
+                      00002 ; ========================================================================
+                      00003 ; RC5UTIL.ASM
+                      00004 ;
+                      00005 ; Version history
+                      00006 ; 001   Initial.
+                      00007 ; ========================================================================
+                      00008 ;
+                      00009 
+                      00010 ;
+                      00011 ; LookForShortedPins                    Returns first pin that user has shorted
+                      00012 ; SetBitInOutputMask
+                      00013 ; ClearBitInOutputMask
+                      00014 ; ReverseBitInOutputMask
+                      00015 ; ClearBitInOutputMask                  Clears the specified bit in outputs mask
+                      00016 ; CheckForRadioAssignement              Check if the specified pin has a radio assignment
+                      00017 ; AddPinDataToTable
+                      00018 ; FindCodeAndConfAndPinInTable
+                      00019 ; FindModePinInTable                    Returns the first pin used for the assignment with specified mod
+                            e.
+                      00020 ; ResetTable
+                      00021 ; DefineWriteNullCell
+                      00022 ; ClearPinFromTable
+                      00023 ; TestIfCellValid
+                      00024 ; ClearRadioChannels
+                      00025 ; NextRadioPin
+                      00026 ; PrevRadioPin
+                      00027 ; GetFirstPinNumberFromIRCode
+                      00028 ; ReadModeConf
+                      00029 ; ModeConf2Int                                  Use ReadModeConf instead
+                      00030 ; ModeInt2Conf
+                      00031 ; ActivateOutputMask
+                      00032 ; DeactivateOutputMask
+                      00033 ; SaveCurrentOutputLevels               The state of the output pins are saved in eeprom if changed
+                      00034 ; RestoreOutputLevelMask
+                      00035 ; GetFirstCodeAndConf                   Finds the IR code and conf in table from pin number
+                      00036 ; GetNextCodeAndConf
+                      00037 ; CheckForRadioAssignment
+                      00038 ; SetOutputsFromMasks                   Sets the 16 output pin levels as given by "OutputsMaskXxx"
+                      00039 ;
+                      00040 
+                      00041 
+                      00042                 ; TestOutputPin - Macro
+                      00043                 ; ---------------------------------------------------
+                      00044                 ;
+                      00045                 ;
+                      00046 TestOutputPin   macro   port, bit, pin
+                      00047 
+                      00048                         btfss   mask, bit
+                      00049                         goto    $ + 4
+                      00050                         btfss   port, pin
+                      00051                         goto    FoundUnexpectedPin      ; they differ
+                      00052                         goto    $ + 4                           ; both high
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00053 
+                      00054                         btfss   port, pin
+                      00055                         goto    $ + 2                           ; both low
+                      00056                         goto    FoundUnexpectedPin      ; they differ
+                      00057 
+                      00058                         addlw   1
+                      00059                         endm
+                      00060 
+                      00061 
+                      00062 
+                      00063 
+                      00064 
+                      00065                 ; LookForShortedPins
+                      00066                 ; ---------------------------------------------------
+                      00067                 ; Returns first pin that has unexpected level from a user short
+                      00068                 ; to either gnd or vcc.
+                      00069                 ; Scans output pins sequentially from 0 to 15.
+                      00070                 ;
+                      00071                 ; Output : W = pin number (0-15)
+                      00072                 ;          C = 1 if pin where found, else C = 0
+                      00073                 ;
+                      00074 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00075 LookForShortedPins
+                      00076 
+Error[113]  : Symbol not previously defined (OutputsMask32)
+  00000000            00077 mask            set  OutputsMask32+0
+                      00078 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00079                         clrw
+                      00080 
+                      00081                         TestOutputPin   PIN0_PORT, BIT0, PIN0
+                          M 
+Error[113]  : Symbol not previously defined (BIT0)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                      M                         btfss   mask, BIT0
+Error[150]  : Labels must be defined in a code or data section when making an object file
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                      M                         goto    $ + 4
+Error[113]  : Symbol not previously defined (PIN0_PORT)
+Error[113]  : Symbol not previously defined (PIN0)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                      M                         btfss   PIN0_PORT, PIN0
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                      M                         goto    FoundUnexpectedPin      ; they differ
+Error[150]  : Labels must be defined in a code or data section when making an object file
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                      M                         goto    $ + 4                           ; both high
+                          M 
+Error[113]  : Symbol not previously defined (PIN0_PORT)
+Error[113]  : Symbol not previously defined (PIN0)
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                      M                         btfss   PIN0_PORT, PIN0
+Error[150]  : Labels must be defined in a code or data section when making an object file
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                      M                         goto    $ + 2                           ; both low
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                      M                         goto    FoundUnexpectedPin      ; they differ
+                          M 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                      M                         addlw   1
+                      00082                 ifdef PIN1_PORT
+                      00083                         TestOutputPin   PIN1_PORT, BIT1, PIN1
+                      00084                 endif
+                      00085                 ifdef PIN2_PORT
+                      00086                         TestOutputPin   PIN2_PORT, BIT2, PIN2
+                      00087                         TestOutputPin   PIN3_PORT, BIT3, PIN3
+                      00088                 endif
+                      00089                 ifdef PIN4_PORT
+                      00090                         TestOutputPin   PIN4_PORT, BIT4, PIN4
+                      00091                         TestOutputPin   PIN5_PORT, BIT5, PIN5
+                      00092                         TestOutputPin   PIN6_PORT, BIT6, PIN6
+                      00093                         TestOutputPin   PIN7_PORT, BIT7, PIN7
+                      00094 
+                      00095 mask            set  OutputsMask32+1
+                      00096 
+                      00097                 if ICE  ; -------------------------------------
+                      00098                         nop             ; Breakpoint :
+                      00099                         nop             ;
+                      00100                 endif   ; -------------------------------------
+                      00101 
+                      00102                         TestOutputPin   PIN8_PORT, BIT0, PIN8
+                      00103                         TestOutputPin   PIN9_PORT, BIT1, PIN9
+                      00104                         TestOutputPin   PIN10_PORT, BIT2, PIN10
+                      00105                         TestOutputPin   PIN11_PORT, BIT3, PIN11
+                      00106 
+                      00107                 if ICE  ; -------------------------------------
+                      00108                         nop             ; Breakpoint :
+                      00109                         nop             ;
+                      00110                 endif   ; -------------------------------------
+                      00111 
+                      00112                         TestOutputPin   PIN12_PORT, BIT4, PIN12
+                      00113                 if ICE == false
+                      00114                         messg "Info: 16 pins available"
+                      00115                         TestOutputPin   PIN13_PORT, BIT5, PIN13
+                      00116                         TestOutputPin   PIN14_PORT, BIT6, PIN14
+                      00117                         TestOutputPin   PIN15_PORT, BIT7, PIN15
+                      00118                 endif
+                      00119                 endif
+                      00120 
+                      00121                         ; No differences
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00122                         clrc
+Error[151]  : Operand contains unresolvable labels or is too complex
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00123                         goto    LookForShortedPinsExit
+                      00124 
+                      00125 
+                      00126 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00127 FoundUnexpectedPin
+                      00128 
+                      00129                 ifdef BI_TOGGLE_DEFINED
+                      00130 
+                      00131                 if ICE  ; -------------------------------------
+                      00132                         nop             ; Breakpoint :
+                      00133                         nop             ;
+                      00134                 endif   ; -------------------------------------
+                      00135 
+                      00136                          ; If bitoggle slave pin and running in normal mode
+                      00137                          ; then remap to master pin.
+                      00138 
+                      00139                         btfsc   Flags, PROGRAM_MODE_ON
+                      00140                         goto    BitoggleEnds
+                      00141 
+                      00142                 if ICE  ; -------------------------------------
+                      00143                         nop             ; Breakpoint :
+                      00144                         nop             ;
+                      00145                 endif   ; -------------------------------------
+                      00146 
+                      00147             movwf   TempIndex
+                      00148 
+                      00149             movlw   .12
+                      00150             subwf   TempIndex, W
+                      00151             skpz
+                      00152             goto    not@12
+                      00153             btfss   BiToggleRegister, BIT0
+                      00154             goto    exit_bitoggle
+                      00155             goto    remap_bitoggle
+                      00156 not@12
+                      00157 
+                      00158             movlw   .13
+                      00159             subwf   TempIndex, W
+                      00160             skpz
+                      00161             goto    not@13
+                      00162             btfss   BiToggleRegister, BIT1
+                      00163             goto    exit_bitoggle
+                      00164             goto    remap_bitoggle
+                      00165 not@13
+                      00166 
+                      00167             movlw   .14
+                      00168             subwf   TempIndex, W
+                      00169             skpz
+                      00170             goto    not@14
+                      00171             btfss   BiToggleRegister, BIT2
+                      00172             goto    exit_bitoggle
+                      00173             goto    remap_bitoggle
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00174 not@14
+                      00175 
+                      00176             movlw   .15
+                      00177             subwf   TempIndex, W
+                      00178             skpz
+                      00179             goto    not@15
+                      00180             btfss   BiToggleRegister, BIT3
+                      00181             goto    exit_bitoggle
+                      00182             goto    remap_bitoggle
+                      00183 not@15
+                      00184             goto    exit_bitoggle
+                      00185 
+                      00186 remap_bitoggle
+                      00187             movlw   .4
+                      00188             subwf   TempIndex, F
+                      00189 
+                      00190 exit_bitoggle
+                      00191             movf    TempIndex, W
+                      00192 
+                      00193 BitoggleEnds
+                      00194 
+                      00195                 endif ; BI_TOGGLE_DEFINED
+                      00196 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00197                         setc
+                      00198 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00199 LookForShortedPinsExit
+                      00200 
+Error[113]  : Symbol not previously defined (ICE)
+                      00201                 if ICE  ; -------------------------------------
+                      00202                         nop             ; Breakpoint :
+                      00203                         nop             ;
+                      00204                 endif   ; -------------------------------------
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00205                         return
+                      00206 
+                      00207 
+                      00208 
+                      00209                 ; SetBitInOutputMask
+                      00210                 ; ---------------------------------------------------
+                      00211                 ; Input  : W = Bit number to set (0-15)
+                      00212                 ; Output : "OutputsMaskxxx" (a word) has the corresponding bit set.
+                      00213                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00214 SetBitInOutputMask
+                      00215 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00216                         call    CheckIfPinIsInputOnly
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00217                         skpnc
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  00218                         return
+                      00219 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00220                         call    BitToMask
+                      00221 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00222                         movf    ShiftTempQuad+0, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00223                         iorwf   OutputsMask32+0, F
+                      00224 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00225                         movf    ShiftTempQuad+1, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00226                         iorwf   OutputsMask32+1, F
+                      00227 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00228                         movf    ShiftTempQuad+2, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00229                         iorwf   OutputsMask32+2, F
+                      00230 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00231                         movf    ShiftTempQuad+3, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00232                         iorwf   OutputsMask32+3, F
+                      00233 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00234                         return
+                      00235 
+                      00236 
+                      00237 
+                      00238                 ; ClearBitInOutputMask
+                      00239                 ; ---------------------------------------------------
+                      00240                 ; Clears the specified bit in outputs mask
+                      00241                 ; Input  : W = Bit number to clear (0-15)
+                      00242                 ; Output : "OutputsMaskxxx" (a word) has the corresponding bit cleared
+                      00243                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00244 ClearBitInOutputMask
+                      00245 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00246                         call    CheckIfPinIsInputOnly
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00247                         skpnc
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00248                         return
+                      00249 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00250                         call    BitToMask
+                      00251 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00252                         comf    ShiftTempQuad+0, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00253                         andwf   OutputsMask32+0, F
+                      00254 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00255                         comf    ShiftTempQuad+1, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00256                         andwf   OutputsMask32+1, F
+                      00257 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00258                         comf    ShiftTempQuad+2, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00259                         andwf   OutputsMask32+2, F
+                      00260 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00261                         comf    ShiftTempQuad+3, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00262                         andwf   OutputsMask32+3, F
+                      00263 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00264                         return
+                      00265 
+                      00266 
+                      00267 
+                      00268 
+                      00269                 ; ReverseBitInOutputMask
+                      00270                 ; ---------------------------------------------------
+                      00271                 ; Input  : W = Bit number to reverse (0-15)
+                      00272                 ; Output : "OutputsMaskxxx" (a word) has the corresponding bit cleared
+                      00273                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00274 ReverseBitInOutputMask
+                      00275 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00276                         call    CheckIfPinIsInputOnly
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  00277                         skpnc
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00278                         return
+                      00279 
+                      00280 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00281                         call    BitToMask
+                      00282 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00283                         movf    ShiftTempQuad+0, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00284                         xorwf   OutputsMask32+0, F
+                      00285 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00286                         movf    ShiftTempQuad+1, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00287                         xorwf   OutputsMask32+1, F
+                      00288 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00289                         movf    ShiftTempQuad+2, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00290                         xorwf   OutputsMask32+2, F
+                      00291 
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00292                         movf    ShiftTempQuad+3, W
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00293                         xorwf   OutputsMask32+3, F
+                      00294 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00295                         return
+                      00296 
+                      00297 
+                      00298 
+                      00299                 ; -------------------------------------------------------------------
+                      00300                 ; CheckIfPinIsInputOnly
+                      00301                 ; -------------------------------------------------------------
+                      00302                 ; Checks if the specified pin is a BiToggle slave input.
+                      00303                 ;
+                      00304                 ; Input  : Pin in W
+                      00305                 ; Output : C=1 pin is a bitoggle slave
+                      00306                 ;          C=0 pin is not a bitoggle slave
+                      00307                 ;                  Pin in W (NOTE!)
+                      00308                 ; Modify : TempIndex
+                      00309                 ;
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00310 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00311 CheckIfPinIsInputOnly
+                      00312 
+Error[113]  : Symbol not previously defined (TempStack)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00313                         movwf   TempStack               ; Push W
+                      00314 
+                      00315                 ifdef CONF_RADIO_NEXT
+                      00316             movlw   .0
+                      00317             subwf   TempStack, W
+                      00318             skpz
+                      00319             goto    _not@0
+                      00320                         btfss   RadioModeNextPin, BIT7
+                      00321             goto    pin_is_output
+                      00322             goto    pin_is_input
+                      00323 _not@0
+                      00324                 endif
+                      00325 
+                      00326                 ifdef CONF_RADIO_PREV
+                      00327             movlw   .1
+                      00328             subwf   TempStack, W
+                      00329             skpz
+                      00330             goto    _not@1
+                      00331                         btfss   RadioModePrevPin, BIT7
+                      00332             goto    pin_is_output
+                      00333             goto    pin_is_input
+                      00334 _not@1
+                      00335                 endif
+                      00336 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00337             movlw   .12
+Error[113]  : Symbol not previously defined (TempStack)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00338             subwf   TempStack, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00339             skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00340             goto    _not@12
+Error[113]  : Symbol not previously defined (BiToggleRegister)
+Error[113]  : Symbol not previously defined (BIT0)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00341             btfss   BiToggleRegister, BIT0
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00342             goto    pin_is_output
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00343             goto    pin_is_input
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00344 _not@12
+                      00345 
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 10
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00346             movlw   .13
+Error[113]  : Symbol not previously defined (TempStack)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00347             subwf   TempStack, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00348             skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00349             goto    _not@13
+Error[113]  : Symbol not previously defined (BiToggleRegister)
+Error[113]  : Symbol not previously defined (BIT1)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00350             btfss   BiToggleRegister, BIT1
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00351             goto    pin_is_output
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00352             goto    pin_is_input
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00353 _not@13
+                      00354 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00355             movlw   .14
+Error[113]  : Symbol not previously defined (TempStack)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00356             subwf   TempStack, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00357             skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00358             goto    _not@14
+Error[113]  : Symbol not previously defined (BiToggleRegister)
+Error[113]  : Symbol not previously defined (BIT2)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00359             btfss   BiToggleRegister, BIT2
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00360             goto    pin_is_output
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00361             goto    pin_is_input
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00362 _not@14
+                      00363 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00364             movlw   .15
+Error[113]  : Symbol not previously defined (TempStack)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00365             subwf   TempStack, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00366             skpz
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 11
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00367             goto    _not@15
+Error[113]  : Symbol not previously defined (BiToggleRegister)
+Error[113]  : Symbol not previously defined (BIT3)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00368             btfss   BiToggleRegister, BIT3
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00369             goto    pin_is_output
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00370             goto    pin_is_input
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00371 _not@15
+                      00372 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00373             goto    pin_is_output
+                      00374 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00375 pin_is_input
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00376                         setc
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00377                         goto    CheckIfPinExit
+                      00378 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00379 pin_is_output
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00380                         clrc
+                      00381 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00382 CheckIfPinExit
+                      00383 
+Error[113]  : Symbol not previously defined (TempStack)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00384                         movf    TempStack, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00385                         return
+                      00386 
+                      00387                         ; CheckIfPinIsInputOnly
+                      00388 
+                      00389 
+                      00390 
+                      00391                 ; BitToMask
+                      00392                 ; ---------------------------------------------------
+                      00393                 ; Set bit at pos given by W. If W > 15 then all zeroes are
+                      00394                 ; output.
+                      00395                 ; Input  : W = Bit number to set.
+                      00396                 ; Output : ShiftTemp (16bit) has requested bit set to high
+                      00397 
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 12
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00398 BitToMask
+                      00399 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00400                         addlw   1
+                      00401                          ;
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00402                         clrf    ShiftTempQuad+0
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00403                         clrf    ShiftTempQuad+1
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00404                         clrf    ShiftTempQuad+2
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00405                         clrf    ShiftTempQuad+3
+                      00406 
+                      00407 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00408                         setc
+                      00409                          ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00410 shift_again     rlf             ShiftTempQuad+0, F
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00411                         rlf             ShiftTempQuad+1, F
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00412                         rlf             ShiftTempQuad+2, F
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00413                         rlf             ShiftTempQuad+3, F
+                      00414                          ;
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00415                         addlw   0xFF            ; Subtract one from W....
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00416                         clrc
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00417                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00418                         goto    shift_again
+                      00419 
+Error[113]  : Symbol not previously defined (ICE)
+                      00420                 if ICE  ; -------------------------------------
+                      00421                         nop             ; Breakpoint :
+                      00422                 endif   ; -------------------------------------
+                      00423 
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 13
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  00424                         return
+                      00425 
+                      00426 
+                      00427 
+                      00428 
+                      00429 
+                      00430                 ; -------------------------------------------------------------------
+                      00431                 ; SetTablePointer
+                      00432                 ; -------------------------------------------------------------
+                      00433                 ;
+                      00434                 ; Input  : Cell index in W
+                      00435                 ; Output : Relative offset of first cell byte in table
+                      00436                 ;
+                      00437 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00438 SetTablePointer
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00439                         movwf   TablePointer
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00440                         clrc
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00441                         rlf             TablePointer, F
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00442                         rlf             TablePointer, F
+                      00443 
+Error[113]  : Symbol not previously defined (FLASH_TABLE)
+                      00444                 if FLASH_TABLE == 0
+Error[113]  : Symbol not previously defined (AssignmentsTable)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00445                         movlw   AssignmentsTable
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00446                         addwf   TablePointer, F
+                      00447                 endif
+                      00448 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00449                         return
+                      00450 
+                      00451 
+                      00452 
+                      00453 
+                      00454 
+                      00455 
+                      00456                 ; -------------------------------------------------------------------
+                      00457                 ; PokeTableCell
+                      00458                 ; -------------------------------------------------------------
+                      00459                 ;
+                      00460                 ; Input  :
+                      00461                 ; Output :
+                      00462                 ;
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 14
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00463 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00464 PokeTableCell
+                      00465 
+Error[113]  : Symbol not previously defined (FLASH_TABLE)
+                      00466         if FLASH_TABLE
+                      00467 
+                      00468                         movf    TablePointer, W
+                      00469 
+                      00470                         ; ToDo : looped code to save space....
+                      00471 
+                      00472                         di
+                      00473                         SetPgeF FLASH_CODE_PAGE
+                      00474                         call    FlashSetAdrZeroPage & __PAGE__
+                      00475                         SetPage0Auto
+                      00476 
+                      00477                         movf    Write_Low, W
+                      00478 
+                      00479                         SetPgeF FLASH_CODE_PAGE
+                      00480                         call    FlashWriteByteW & __PAGE__
+                      00481                         call    FlashAddressNext & __PAGE__
+                      00482                         SetPage0Auto
+                      00483 
+                      00484                         movf    Write_High, W
+                      00485 
+                      00486                         SetPgeF FLASH_CODE_PAGE
+                      00487                         call    FlashWriteByteW & __PAGE__
+                      00488                         call    FlashAddressNext & __PAGE__
+                      00489                         SetPage0Auto
+                      00490 
+                      00491                         movf    Write_Conf_Mode, W
+                      00492 
+                      00493                         SetPgeF FLASH_CODE_PAGE
+                      00494                         call    FlashWriteByteW & __PAGE__
+                      00495                         call    FlashAddressNext & __PAGE__
+                      00496                         SetPage0Auto
+                      00497 
+                      00498                         movf    Write_Conf_Pin, W
+                      00499 
+                      00500                         SetPgeF FLASH_CODE_PAGE
+                      00501                         call    FlashWriteByteW & __PAGE__
+                      00502                         SetPage0Auto
+                      00503                         ei
+                      00504 
+                      00505                 if ICE  ; -------------------------------------
+                      00506                         nop             ; Breakpoint :
+                      00507                         nop             ;
+                      00508                 endif   ; -------------------------------------
+                      00509 
+                      00510                         return
+                      00511 
+                      00512 
+                      00513                 else
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 15
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00514 
+Warning[207]: Found label after column 1. (zsdsadad)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00515                         zsdsadad
+                      00516 
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00517                         movf    TablePointer, W
+Error[113]  : Symbol not previously defined (SetEepAdr)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00518                         call    SetEepAdr
+Warning[207]: Found label after column 1. (SetBank0)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00519                         SetBank0
+Error[113]  : Symbol not previously defined (Write_Low)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00520                         movf    Write_Low, W
+Error[113]  : Symbol not previously defined (EepWriteW)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00521                         call    EepWriteW
+Warning[207]: Found label after column 1. (SetBank0)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00522                         SetBank0
+                      00523 
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00524                         movf    TablePointer, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00525                         addlw   1
+Error[113]  : Symbol not previously defined (SetEepAdr)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00526                         call    SetEepAdr
+Warning[207]: Found label after column 1. (SetBank0)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00527                         SetBank0
+Error[113]  : Symbol not previously defined (Write_High)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00528                         movf    Write_High, W
+Error[113]  : Symbol not previously defined (EepWriteW)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00529                         call    EepWriteW
+Warning[207]: Found label after column 1. (SetBank0)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00530                         SetBank0
+                      00531 
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00532                         movf    TablePointer, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00533                         addlw   2
+Error[113]  : Symbol not previously defined (SetEepAdr)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00534                         call    SetEepAdr
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 16
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[207]: Found label after column 1. (SetBank0)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00535                         SetBank0
+Error[113]  : Symbol not previously defined (Write_Conf)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00536                         movf    Write_Conf, W
+Error[113]  : Symbol not previously defined (EepWriteW)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00537                         call    EepWriteW
+Warning[207]: Found label after column 1. (SetBank0)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00538                         SetBank0
+                      00539 
+Error[113]  : Symbol not previously defined (ICE)
+                      00540                 if ICE  ; -------------------------------------
+                      00541                         nop             ; Breakpoint :
+                      00542                         nop             ;
+                      00543                 endif   ; -------------------------------------
+                      00544 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00545                         return
+                      00546                 endif
+                      00547 
+                      00548 
+                      00549 
+                      00550                 ; -------------------------------------------------------------------
+                      00551                 ; PeekTableCell
+                      00552                 ; PeekTableCellPin
+                      00553                 ; PeekTableCellIRLow
+                      00554                 ; -------------------------------------------------------------
+                      00555                 ;
+                      00556                 ; Input  : 'TablePointer'
+                      00557                 ; Output : Read_XXX byte(s) are set
+                      00558                 ;
+                      00559 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00560 PeekTableCellPin
+                      00561 
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00562                         movf    TablePointer, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00563                         addlw   3
+Warning[207]: Found label after column 1. (di)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00564                         di
+Warning[207]: Found label after column 1. (SetPgeF)
+Error[122]  : Illegal opcode (FLASH_CODE_PAGE)
+0000                  00565                         SetPgeF FLASH_CODE_PAGE
+Error[113]  : Symbol not previously defined (FlashSetAdrZeroPage)
+Error[113]  : Symbol not previously defined (__PAGE__)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00566                         call    FlashSetAdrZeroPage & __PAGE__
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 17
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[113]  : Symbol not previously defined (FlashRead)
+Error[113]  : Symbol not previously defined (__PAGE__)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00567                         call    FlashRead & __PAGE__
+Warning[207]: Found label after column 1. (SetPage0Auto)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00568                         SetPage0Auto
+Warning[207]: Found label after column 1. (ei)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00569                         ei
+                      00570 
+Error[113]  : Symbol not previously defined (Read_Conf_Pin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00571                         movwf   Read_Conf_Pin
+                      00572 
+Error[113]  : Symbol not previously defined (ICE)
+                      00573                 if ICE  ; -------------------------------------
+                      00574                         nop             ; Breakpoint :
+                      00575                         nop             ;
+                      00576                 endif   ; -------------------------------------
+                      00577 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00578                         return
+                      00579 
+                      00580 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00581 PeekTableCellIRLow
+                      00582 
+                      00583 
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00584                         movf    TablePointer, W
+                      00585 
+Warning[207]: Found label after column 1. (di)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00586                         di
+Warning[207]: Found label after column 1. (SetPgeF)
+Error[122]  : Illegal opcode (FLASH_CODE_PAGE)
+0000                  00587                         SetPgeF FLASH_CODE_PAGE
+Error[113]  : Symbol not previously defined (FlashSetAdrZeroPage)
+Error[113]  : Symbol not previously defined (__PAGE__)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00588                         call    FlashSetAdrZeroPage & __PAGE__
+Error[113]  : Symbol not previously defined (FlashRead)
+Error[113]  : Symbol not previously defined (__PAGE__)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00589                         call    FlashRead & __PAGE__
+Warning[207]: Found label after column 1. (SetPage0Auto)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00590                         SetPage0Auto
+Warning[207]: Found label after column 1. (ei)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00591                         ei
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 18
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00592 
+Error[113]  : Symbol not previously defined (Read_Low)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00593                         movwf   Read_Low
+                      00594 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00595                         return
+                      00596 
+                      00597 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00598 PeekTableCell
+                      00599 
+Error[113]  : Symbol not previously defined (FLASH_TABLE)
+                      00600         if FLASH_TABLE
+                      00601 
+                      00602                         movf    TablePointer, W
+                      00603 
+                      00604                         di
+                      00605                         SetPgeF FLASH_CODE_PAGE
+                      00606                         call    FlashSetAdrZeroPage & __PAGE__
+                      00607                         call    FlashRead & __PAGE__
+                      00608                         SetPage0Auto
+                      00609                         ei
+                      00610 
+                      00611                         movwf   Read_Low
+                      00612 
+                      00613                         di
+                      00614                         SetPgeF FLASH_CODE_PAGE
+                      00615                         call    FlashAddressNext & __PAGE__
+                      00616                         call    FlashRead & __PAGE__
+                      00617                         SetPage0Auto
+                      00618 
+                      00619                         movwf   Read_High
+                      00620 
+                      00621                         SetPgeF FLASH_CODE_PAGE
+                      00622                         call    FlashAddressNext & __PAGE__
+                      00623                         call    FlashRead & __PAGE__
+                      00624                         SetPage0Auto
+                      00625                         ei
+                      00626 
+                      00627                         movwf   Read_Conf_Mode
+                      00628 
+                      00629                         di
+                      00630                         SetPgeF FLASH_CODE_PAGE
+                      00631                         call    FlashAddressNext & __PAGE__
+                      00632                         call    FlashRead & __PAGE__
+                      00633                         SetPage0Auto
+                      00634                         ei
+                      00635 
+                      00636                         movwf   Read_Conf_Pin
+                      00637 
+                      00638                 if ICE  ; -------------------------------------
+                      00639                         nop             ; Breakpoint :
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 19
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00640                         nop             ;
+                      00641                 endif   ; -------------------------------------
+                      00642 
+                      00643                         return
+                      00644         else
+                      00645 
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00646                         movf    TablePointer, W
+Error[113]  : Symbol not previously defined (EepReadW)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00647                         call    EepReadW
+Warning[207]: Found label after column 1. (SetBank0)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00648                         SetBank0
+Error[113]  : Symbol not previously defined (Read_Low)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00649                         movwf   Read_Low
+                      00650 
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00651                         movf    TablePointer, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00652                         addlw   1
+Error[113]  : Symbol not previously defined (EepReadW)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00653                         call    EepReadW
+Warning[207]: Found label after column 1. (SetBank0)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00654                         SetBank0
+Error[113]  : Symbol not previously defined (Read_High)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00655                         movwf   Read_High
+                      00656 
+Error[113]  : Symbol not previously defined (TablePointer)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00657                         movf    TablePointer, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00658                         addlw   2
+Error[113]  : Symbol not previously defined (EepReadW)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00659                         call    EepReadW
+Warning[207]: Found label after column 1. (SetBank0)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00660                         SetBank0
+Error[113]  : Symbol not previously defined (Read_Conf)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00661                         movwf   Read_Conf
+                      00662 
+Error[113]  : Symbol not previously defined (ICE)
+                      00663                 if ICE  ; -------------------------------------
+                      00664                         nop             ; Breakpoint :
+                      00665                         nop             ;
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 20
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00666                 endif   ; -------------------------------------
+                      00667 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00668                         return
+                      00669 
+                      00670                 endif
+                      00671 
+                      00672 
+                      00673 
+                      00674 
+                      00675                 ; -------------------------------------------------------------------
+                      00676                 ; AddPinDataToTable
+                      00677                 ; -------------------------------------------------------------
+                      00678                 ;
+                      00679                 ; Input  : Data in "Write_xxx" including pin number
+                      00680                 ; Output : C=1 succes, C=0 no room
+                      00681                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00682 AddPinDataToTable
+Error[113]  : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00683                         movlw   TABLE_NOF_CELLS
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00684                         movwf   Counter
+                      00685                          ;
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00686                         clrf    TempIndex
+                      00687 
+                      00688 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00689 etst_next_word
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00690                         movf    TempIndex, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00691                         call    SetTablePointer
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00692                         call    PeekTableCell
+                      00693 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00694                         call    TestIfCellValid
+                      00695 
+Error[113]  : Symbol not previously defined (ICE)
+                      00696                 if ICE  ; -------------------------------------
+                      00697                         nop             ; Breakpoint :
+                      00698                         nop             ;
+                      00699                 endif   ; -------------------------------------
+                      00700 
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 21
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00701                         skpnc
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00702                         goto    not_null_cell
+                      00703 
+                      00704                          ; Found a clear spot
+                      00705 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00706                         call    PokeTableCell
+                      00707 
+                      00708                          ; Succes return
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00709                         setc
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00710                         return
+                      00711 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00712 not_null_cell
+                      00713 
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00714                         incf    TempIndex, F
+                      00715 
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00716                         decfsz  Counter, F
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00717                         goto    etst_next_word
+                      00718 
+                      00719                          ; Error return, table full
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00720                         clrc
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00721                         return
+                      00722 
+                      00723 
+                      00724 
+                      00725 
+                      00726                 ; -------------------------------------------------------------------
+                      00727                 ; FindCodeAndConfAndPinInTable
+                      00728                 ; -------------------------------------------------------------
+                      00729                 ;
+                      00730                 ; Input  : Data to find in "Write_Low/_High/_Conf/_Pin"
+                      00731                 ; Output : C=1 found, C=0 not found
+                      00732                 ;
+                      00733 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00734 FindCodeAndConfAndPinInTable
+                      00735 
+Error[113]  : Symbol not previously defined (TABLE_NOF_CELLS)
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 22
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00736                         movlw   TABLE_NOF_CELLS
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00737                         movwf   Counter
+                      00738                          ;
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00739                         clrf    TempIndex
+                      00740 
+                      00741 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00742 etst_next_wod
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00743                         movf    TempIndex, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00744                         call    SetTablePointer
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00745                         call    PeekTableCell
+                      00746 
+Error[113]  : Symbol not previously defined (Read_Low)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00747                         movf    Read_Low, W
+Error[113]  : Symbol not previously defined (Write_Low)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00748                         subwf   Write_Low, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00749                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00750                         goto    fcc_not_this
+                      00751 
+Error[113]  : Symbol not previously defined (Read_High)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00752                         movf    Read_High, W
+Error[113]  : Symbol not previously defined (Write_High)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00753                         subwf   Write_High, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00754                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00755                         goto    fcc_not_this
+                      00756 
+Error[113]  : Symbol not previously defined (Read_Conf_Mode)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00757                         movf    Read_Conf_Mode, W
+Error[113]  : Symbol not previously defined (Write_Conf_Mode)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00758                         subwf   Write_Conf_Mode, W
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 23
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00759                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00760                         goto    fcc_not_this
+                      00761 
+Error[113]  : Symbol not previously defined (Read_Conf_Pin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00762                         movf    Read_Conf_Pin, W
+Error[113]  : Symbol not previously defined (Write_Conf_Pin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00763                         subwf   Write_Conf_Pin, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00764                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00765                         goto    fcc_not_this
+                      00766 
+                      00767                          ; Found the code, return with carry set
+                      00768                          ;
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00769                         setc
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00770                         return
+                      00771 
+                      00772 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00773 fcc_not_this
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00774                         incf    TempIndex, F
+                      00775 
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00776                         decfsz  Counter, F
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00777                         goto    etst_next_wod
+                      00778 
+                      00779                          ; Not found, return with carry clear
+                      00780                          ;
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00781                         clrc
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00782                         return
+                      00783 
+                      00784 
+                      00785                 ; -------------------------------------------------------------------
+                      00786                 ; FindModePinInTable
+                      00787                 ; -------------------------------------------------------------------
+                      00788                 ; Returns the first pin used for the assignment with specified mode.
+                      00789                 ; Made for finding RadioNext/Prev pins.
+                      00790                 ; Input   : The mode to find in W
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 24
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00791                 ; Output  : Pin in W (0..31) and C=1 if found, C=0 if not found
+                      00792                 ; Destroy : Write_Conf_Mode
+                      00793                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00794 FindModePinInTable
+                      00795 
+Error[113]  : Symbol not previously defined (Write_Conf_Mode)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00796                         movwf   Write_Conf_Mode
+                      00797 
+Error[113]  : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00798                         movlw   TABLE_NOF_CELLS
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00799                         movwf   Counter
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00800                         clrf    TempIndex
+                      00801 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00802 fmpt_next
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00803                         movf    TempIndex, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00804                         call    SetTablePointer
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00805                         call    PeekTableCell
+                      00806 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00807                         call    ReadModeConf
+Error[113]  : Symbol not previously defined (Write_Conf_Mode)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00808                         subwf   Write_Conf_Mode, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00809                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00810                         goto    fmpt_not_this
+                      00811 
+                      00812                          ; Found the code, return with carry set
+                      00813                          ;
+Error[113]  : Symbol not previously defined (Read_Conf_Pin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00814                         movf    Read_Conf_Pin, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00815                         setc
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 25
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  00816                         goto    fmpt_exit
+                      00817 
+                      00818 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00819 fmpt_not_this
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00820                         incf    TempIndex, F
+                      00821 
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00822                         decfsz  Counter, F
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00823                         goto    fmpt_next
+                      00824 
+                      00825                          ; Not found, return with carry clear
+                      00826                          ;
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00827                         clrc
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00828 fmpt_exit
+Error[113]  : Symbol not previously defined (ICE)
+                      00829                 if ICE  ; -------------------------------------
+                      00830                         nop             ; Breakpoint :
+                      00831                         nop             ;
+                      00832                 endif   ; -------------------------------------
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00833                         return
+                      00834 
+                      00835 
+                      00836 
+                      00837 
+                      00838                 ; -------------------------------------------------------------------
+                      00839                 ; ResetTable
+                      00840                 ; -------------------------------------------------------------
+                      00841                 ; Resets the assignments table (in program flash memory)
+                      00842                 ;
+                      00843                 ; Input  :
+                      00844                 ; Output :
+                      00845                 ;
+                      00846 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+Error[113]  : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00847 ResetTable      movlw   TABLE_NOF_CELLS
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00848                         movwf   Counter
+                      00849 
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00850                         clrf    TempIndex
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 26
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00851 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00852                         call    DefineWriteNullCell
+                      00853 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00854 etst_next_wor
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00855                         movf    TempIndex, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00856                         call    SetTablePointer
+                      00857 
+Error[113]  : Symbol not previously defined (ICE)
+                      00858                 if ICE  ; -------------------------------------
+                      00859                         nop             ; Breakpoint :
+                      00860                         nop             ;
+                      00861                 endif   ; -------------------------------------
+                      00862 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00863                         call    PokeTableCell
+                      00864 
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00865                         incf    TempIndex, F
+                      00866 
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00867                         decfsz  Counter, F
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00868                         goto    etst_next_wor
+                      00869 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00870                         return
+                      00871 
+                      00872 
+                      00873 
+                      00874                 ; -------------------------------------------------------------------
+                      00875                 ; DefineWriteNullCell
+                      00876                 ; -------------------------------------------------------------
+                      00877                 ;
+                      00878                 ; Input  :
+                      00879                 ; Output :
+                      00880                 ;
+                      00881 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00882 DefineWriteNullCell
+                      00883 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00884                         movlw   0xFF                    ; ToDo -> make subrutine
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 27
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[113]  : Symbol not previously defined (Write_Low)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00885                         movwf   Write_Low
+Error[113]  : Symbol not previously defined (Write_High)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00886                         movwf   Write_High
+Error[113]  : Symbol not previously defined (Write_Conf_Mode)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00887                         clrf    Write_Conf_Mode
+Error[113]  : Symbol not previously defined (Write_Conf_Pin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00888                         clrf    Write_Conf_Pin
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00889                         return
+                      00890 
+                      00891 
+                      00892 
+                      00893                 ; -------------------------------------------------------------------
+                      00894                 ; ClearPinFromTable
+                      00895                 ; ------------------------------------------------------------
+                      00896                 ; Removes all instances of this pin in table by writing a NULL entry
+                      00897                 ;
+                      00898                 ; Input  : W = pin number (0-31)
+                      00899                 ; Output :
+                      00900                 ;
+                      00901 
+                      00902 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00903 ClearPinFromTable
+                      00904 
+Error[113]  : Symbol not previously defined (Pin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00905                         movwf   Pin
+                      00906 
+Error[113]  : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00907                         movlw   TABLE_NOF_CELLS
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00908                         movwf   Counter
+                      00909 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00910                         call    DefineWriteNullCell
+                      00911 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00912 rclr_next_word
+                      00913                          ; From highest down to lowest index in table
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00914                         decf    Counter, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 28
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  00915                         call    SetTablePointer
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00916                         call    PeekTableCell
+                      00917 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00918                         movlw   0x1F
+Error[113]  : Symbol not previously defined (Read_Conf_Pin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00919                         andwf   Read_Conf_Pin, W
+Error[113]  : Symbol not previously defined (Pin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00920                         xorwf   Pin, W
+                      00921 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00922                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00923                         goto    not_thisr
+                      00924 
+                      00925                          ; Found pin - erase
+                      00926 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00927                         call    PokeTableCell
+                      00928 
+                      00929 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00930 not_thisr
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00931                         decfsz  Counter, F
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00932                         goto    rclr_next_word
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00933                         return
+                      00934                         ; ClearPinFromTable
+                      00935 
+                      00936 
+                      00937 
+                      00938 
+                      00939 
+                      00940                 ; -------------------------------------------------------------
+                      00941                 ; TestIfCellValid
+                      00942                 ; -------------------------------------------------------------
+                      00943                 ; Legal to call after a table read. The test will fail on a 0xFFFF remote....
+                      00944                 ; See DefineWriteNullCell()
+                      00945                 ; Input  :
+                      00946                 ; Output : C=1 valid, C=0 not valid cell i.e. empty
+                      00947                 ;
+                      00948 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 29
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  00949 TestIfCellValid
+                      00950 
+Error[113]  : Symbol not previously defined (Read_Low)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00951                         movf    Read_Low, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00952                         sublw   0xFF
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00953                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00954                         goto    has_data
+                      00955 
+Error[113]  : Symbol not previously defined (Read_High)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00956                         movf    Read_High, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00957                         sublw   0xFF
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00958                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00959                         goto    has_data
+                      00960 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00961                         clrc
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00962                         return
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00963 has_data
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00964                         setc
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00965                         return
+                      00966 
+                      00967 
+                      00968 
+                      00969 
+                      00970 
+                      00971 
+                      00972 
+                      00973                 ; -------------------------------------------------------------------
+                      00974                 ; ClearRadioChannels
+                      00975                 ; -------------------------------------------------------------
+                      00976                 ; Clears all radio pins except for the current active given by
+                      00977                 ; "RadioPinActivated"
+                      00978                 ;
+                      00979                 ; Input  : "RadioPinActivated"
+                      00980                 ; Output :
+                      00981                 ;
+                      00982 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  00983 ClearRadioChannels
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 30
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00984 
+                      00985                 ifdef CONF_RADIO_MODE
+                      00986 
+                      00987                          ; Loop initialization
+                      00988                          ;
+                      00989                         movlw   TABLE_NOF_CELLS
+                      00990                         movwf   Counter
+                      00991                         clrf    TempIndex
+                      00992 
+                      00993 next_radio
+                      00994                          ; Read table[TempIndex]
+                      00995                         movf    TempIndex, W
+                      00996                         call    SetTablePointer
+                      00997                         call    PeekTableCell   ; Sets "Read_xxx"
+                      00998 
+                      00999                          ; Is it valid ?
+                      01000 
+                      01001                         call    TestIfCellValid
+                      01002                         skpc
+                      01003                         goto    crc_next        ; No, its a null entry
+                      01004 
+                      01005                          ; Is this one a radio mode thing ?
+                      01006                          ;
+                      01007                         movf    Read_Conf_Mode, W
+                      01008                         call    ModeConf2Int
+                      01009 
+                      01010                         sublw   CONF_RADIO_MODE
+                      01011                         skpz
+                      01012                         goto    crc_next        ; No, not radio assignment
+                      01013 
+                      01014                          ; Is it another than the newly selected ?
+                      01015                          ;
+                      01016                         movf    Read_Conf_Pin, W
+                      01017                         subwf   RadioPinActivated, W
+                      01018                         skpnz
+                      01019                         goto    crc_active      ; Its the active pin
+                      01020 
+                      01021                          ; This is another radio button
+                      01022                          ;
+                      01023                         movf    Read_Conf_Pin, W
+                      01024                         call    ClearBitInOutputMask
+                      01025                         goto    crc_next
+                      01026 
+                      01027 crc_active
+                      01028                         movf    Read_Conf_Pin, W
+                      01029                         call    SetBitInOutputMask
+                      01030 
+                      01031 crc_next
+                      01032                         incf    TempIndex, F
+                      01033                          ;
+                      01034                         decfsz  Counter, F
+                      01035                         goto    next_radio
+                      01036 
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 31
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01037                 endif ; CONF_RADIO_MODE
+                      01038 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01039                         return
+                      01040 
+                      01041 
+                      01042 
+                      01043                 ; -------------------------------------------------------------
+                      01044                 ; NextRadioPin
+                      01045                 ; -------------------------------------------------------------
+                      01046                 ; Starts with "RadioPinActivated" and finds next radio pin
+                      01047                 ;
+                      01048                 ; Input  : "RadioPinActivated"
+                      01049                 ; Output : "RadioPinActivated"
+                      01050                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01051 NextRadioPin
+                      01052 
+                      01053                 ifdef CONF_RADIO_MODE
+                      01054 
+                      01055                          ; Loop initialization
+                      01056                          ;
+                      01057                         movlw   TABLE_NOF_CELLS
+                      01058                         movwf   MasterCounter
+                      01059 
+                      01060 _next_radio_p
+                      01061                         incf    RadioPinActivated, F
+                      01062                         movlw   0x0F
+                      01063                         andwf   RadioPinActivated, F
+                      01064                         movf    RadioPinActivated, W
+                      01065 
+                      01066                         call    CheckForRadioAssignment
+                      01067 
+                      01068                         skpnc
+                      01069                         goto    _n_exit
+                      01070 
+                      01071                         decfsz  MasterCounter, F
+                      01072                         goto    _next_radio_p
+                      01073 
+                      01074         endif ; CONF_RADIO_MODE
+                      01075 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01076 _n_exit
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01077                         return
+                      01078 
+                      01079 
+                      01080                 ; -------------------------------------------------------------------
+                      01081                 ; PrevRadioPin
+                      01082                 ; -------------------------------------------------------------
+                      01083                 ; Starts with "RadioPinActivated" and finds prev radio
+                      01084                 ;
+                      01085                 ; Input  : "RadioPinActivated"
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 32
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01086                 ; Output : "RadioPinActivated"
+                      01087                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01088 PrevRadioPin
+                      01089 
+                      01090                 ifdef CONF_RADIO_MODE
+                      01091 
+                      01092                          ; Loop initialization
+                      01093                          ;
+                      01094                         movlw   TABLE_NOF_CELLS
+                      01095                         movwf   MasterCounter
+                      01096 
+                      01097 _prev_radio_p
+                      01098                         decf    RadioPinActivated, F
+                      01099                         movlw   0x0F
+                      01100                         andwf   RadioPinActivated, F
+                      01101                         movf    RadioPinActivated, W
+                      01102 
+                      01103                         call    CheckForRadioAssignment
+                      01104 
+                      01105                         skpnc
+                      01106                         goto    _p_exit
+                      01107 
+                      01108                         decfsz  MasterCounter, F
+                      01109                         goto    _prev_radio_p
+                      01110 
+                      01111         endif ; CONF_RADIO_MODE
+                      01112 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01113 _p_exit
+Error[113]  : Symbol not previously defined (ICE)
+                      01114                 if ICE  ; -------------------------------------
+                      01115                         nop             ; Breakpoint :
+                      01116                         nop             ;
+                      01117                 endif   ; -------------------------------------
+                      01118 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01119                         return
+                      01120 
+                      01121 
+                      01122 
+                      01123 
+                      01124                 ; -------------------------------------------------------------------
+                      01125                 ; GetFirstPinNumberFromIRCode
+                      01126                 ; GetNextPinNumberFromIRCode
+                      01127                 ; -------------------------------------------------------------
+                      01128                 ;
+                      01129                 ; Input  : IR code in 'NewRC5***' word (See "PackTableData")
+                      01130                 ;                        Upper nibble (the pin number) is ignored.
+                      01131                 ; Output : Succes, C = 1 and W = configuration byte (incl output pin no)
+                      01132                 ;                        Fail, C = 0
+                      01133                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 33
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  01134 GetFirstPinNumberFromIRCode
+                      01135 
+Error[113]  : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01136                         movlw   TABLE_NOF_CELLS
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01137                         movwf   Counter
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01138                         clrf    TempIndex
+                      01139 
+                      01140 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01141 CheckNextWord
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01142                         movf    TempIndex, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01143                         call    SetTablePointer
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01144                         call    PeekTableCellIRLow
+                      01145 
+                      01146                          ; Check if lower bytes are equal
+                      01147                          ;
+Error[113]  : Symbol not previously defined (Read_Low)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01148                         movf    Read_Low, W
+Error[113]  : Symbol not previously defined (NewIrLowByte)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01149                         xorwf   NewIrLowByte, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01150                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01151                         goto    GetNextPinNumberFromIRCode
+                      01152 
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01153                         movf    TempIndex, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01154                         call    SetTablePointer
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01155                         call    PeekTableCell
+                      01156 
+                      01157                         ; Lower bytes equal, check upper bytes
+                      01158                         ;
+Error[113]  : Symbol not previously defined (Read_High)
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 34
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  01159                         movf    Read_High, W
+Error[113]  : Symbol not previously defined (NewIrHighByte)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01160                         xorwf   NewIrHighByte, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01161                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01162                         goto    GetNextPinNumberFromIRCode
+                      01163 
+                      01164                          ; Code match, check if it is the same IR standard
+                      01165                  ;
+Error[113]  : Symbol not previously defined (Read_Conf_Mode)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01166                         swapf   Read_Conf_Mode, W
+Error[113]  : Symbol not previously defined (IRPublicFlags)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01167                         xorwf   IRPublicFlags, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01168                         andlw   b'00000011'
+                      01169 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01170                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01171                         goto    GetNextPinNumberFromIRCode     ; no - different standard
+                      01172 
+                      01173                          ; Match ! Get pin number and exit
+                      01174 
+Error[113]  : Symbol not previously defined (Read_Conf_Pin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01175                         movf    Read_Conf_Pin, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01176                         setc
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01177                         goto    outta_here
+                      01178 
+                      01179 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01180 GetNextPinNumberFromIRCode
+                      01181 
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01182                         incf    TempIndex, F
+                      01183                          ;
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01184                         decfsz  Counter, F
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01185                         goto    CheckNextWord
+                      01186                          ;
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 35
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01187                         clrc
+                      01188 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01189 outta_here
+                      01190 
+Error[113]  : Symbol not previously defined (ICE)
+                      01191                 if ICE  ; -------------------------------------
+                      01192                         nop             ; Breakpoint :
+                      01193                         nop             ;
+                      01194                 endif   ; -------------------------------------
+                      01195 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01196                         return ; GetFirstPinNumberFromIRCode / GetNextPinNumberFromIRCode
+                      01197 
+                      01198 
+                      01199 
+                      01200 
+                      01201 
+                      01202                 ; -------------------------------------------------------------------
+                      01203                 ; ModeConf2Int
+                      01204                 ; ReadModeConf          (use this)
+                      01205                 ; -------------------------------------------------------------
+                      01206                 ; Converts configuration byte to mode in decimal (0,1,..n)
+                      01207                 ;
+                      01208                 ; Input  : ReadModeConf:'Read_Conf_Mode', ModeConf2Int:W
+                      01209                 ; Output : W = Mode (0..n)
+                      01210                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01211 ReadModeConf
+Error[113]  : Symbol not previously defined (Read_Conf_Mode)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01212                         movf    Read_Conf_Mode, W
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01213 ModeConf2Int
+                      01214 
+Error[113]  : Symbol not previously defined (NOF_CONF_MODES)
+                      01215         if NOF_CONF_MODES > 7
+                      01216                         error "RC5UTIL.ASM @1199"
+                      01217         endif
+                      01218 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01219                         andlw   b'00000111'
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01220                         return
+                      01221 
+                      01222 
+                      01223 
+                      01224                 ; -------------------------------------------------------------------
+                      01225                 ;       ModeInt2Conf
+                      01226                 ;       -------------------------------------------------------------
+                      01227                 ;       Converts mode in decimal (0,1,..n) to configuration byte
+                      01228                 ;
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 36
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01229                 ;       Input  : W = Mode (0..n)
+                      01230                 ;       Output : W = Ready for logical or'ing into Conf byte
+                      01231 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01232 ModeInt2Conf
+Error[113]  : Symbol not previously defined (NOF_CONF_MODES)
+                      01233         if NOF_CONF_MODES > 7
+                      01234                         error "RC5UTIL.ASM @1217"
+                      01235         endif
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01236                         andlw   b'00000111'
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01237                         return
+                      01238 
+                      01239 
+                      01240 
+                      01241 
+                      01242                 ; -------------------------------------------------------------------
+                      01243                 ; ActivateOutputMask
+                      01244                 ; -------------------------------------------------------------
+                      01245                 ; Extracts pin number and mode from "CurrentConf" and
+                      01246                 ; modifies the output mask accordingly.
+                      01247                 ; NOTE : Setter of "RadioPrescaler" in radio mode (timing the break)
+                      01248                 ;
+                      01249                 ; Input  : "CurrentConf" and "CurrentPin"
+                      01250                 ; Output :
+                      01251                 ;
+Warning[207]: Found label after column 1. (ForcePageAlign)
+Error[122]  : Illegal opcode (.12)
+                      01252                         ForcePageAlign  .12
+                      01253 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01254 ActivateOutputMask
+                      01255 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01256                         movlw   ActivateOutputMask / 0x100
+Error[113]  : Symbol not previously defined (PCLATH)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01257                         movwf   PCLATH
+                      01258                          ;
+Error[113]  : Symbol not previously defined (CurrentConf)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01259                         movf    CurrentConf, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01260                         call    ModeConf2Int
+Error[113]  : Symbol not previously defined (PCL)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01261                         addwf   PCL, F
+  00000000            01262 gotya           set             0
+Error[113]  : Symbol not previously defined (MODE_TABLE_CONF)
+                      01263                 if MODE_TABLE_CONF == 1
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 37
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01264 gotya           set             gotya+1
+                      01265                         goto    Standard
+                      01266                         goto    Toggle
+                      01267                         goto    Radio
+                      01268                 goto    BiToggle
+                      01269                         goto    BiToggleDelayed
+                      01270                 endif
+Error[113]  : Symbol not previously defined (MODE_TABLE_CONF)
+                      01271                 if MODE_TABLE_CONF == .100
+                      01272 gotya           set             gotya+1
+                      01273                         goto    Standard
+                      01274                         goto    Toggle
+                      01275                         goto    Radio
+                      01276                 goto    BiToggle
+                      01277                         goto    BiToggleDelayed
+                      01278                         goto    RadioNext
+                      01279                         goto    RadioPrev
+                      01280                 endif
+                      01281 
+                      01282                 if gotya != 1
+Error[101]  : ERROR: (***** Missing table in Activate/DeactivateOutputMask *****)
+                      01283                         error "***** Missing table in Activate/DeactivateOutputMask *****"
+                      01284                 endif
+                      01285 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+Error[151]  : Operand contains unresolvable labels or is too complex
+                      01286                 if ActivateOutputMask / 0x0100 != ($-1) / 0x0100
+                      01287                         error "Page fault in ActivateOutputMask"
+                      01288                 endif
+                      01289 
+                      01290 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01291 Standard
+Error[113]  : Symbol not previously defined (CurrentPin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01292                         movf    CurrentPin, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01293                         call    SetBitInOutputMask
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01294                         goto    TypeEnds
+                      01295 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01296 Toggle
+Error[113]  : Symbol not previously defined (CurrentPin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01297                         movf    CurrentPin, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01298                         call    ReverseBitInOutputMask
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 38
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  01299                         goto    TypeEnds
+                      01300 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01301 Radio
+                      01302 
+Error[113]  : Symbol not previously defined (CurrentPin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01303                         movf    CurrentPin, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01304                         call    SetBitInOutputMask
+                      01305 
+Error[113]  : Symbol not previously defined (CurrentPin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01306                         movf    CurrentPin, W
+Error[113]  : Symbol not previously defined (RadioPinActivated)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01307                         movwf   RadioPinActivated
+                      01308 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01309                         goto    TypeEndsWithPrescaler
+                      01310 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01311 BiToggle
+                      01312                         ; The bitoggle mode were either triggered by a slave pin stimuli
+                      01313                         ; or a IR code on the master pin.
+                      01314 
+Error[113]  : Symbol not previously defined (CurrentPin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01315                         movf    CurrentPin, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01316                 call    ReverseBitInOutputMask
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01317                         goto    TypeEnds
+                      01318 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01319 BiToggleDelayed
+                      01320 
+                      01321                         ; First issue : If a change is on a delayed bitoggle pin
+                      01322                         ; (queued to be set after the delay time) then delete it
+                      01323                         ; from the queue.
+                      01324                         ; This means that the user is in charge.
+                      01325                         ;
+Error[113]  : Symbol not previously defined (CurrentPin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01326                         movf    CurrentPin, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01327                         call    BitToMask
+                      01328 
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 39
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[113]  : Symbol not previously defined (ShiftTempQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01329                         comf    ShiftTempQuad+1, W
+Error[113]  : Symbol not previously defined (BiToggleRegBootDelay)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01330                         andwf   BiToggleRegBootDelay, F
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01331                         goto    BiToggle
+                      01332 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01333 RadioNext
+                      01334                 ifdef CONF_RADIO_NEXT
+                      01335                         call    NextRadioPin
+                      01336                         ;movf   RadioPinActivated, W
+                      01337                         ;call   SetBitInOutputMask
+                      01338                 if ICE  ; -------------------------------------
+                      01339                         nop             ; Breakpoint :
+                      01340                 endif   ; -------------------------------------
+                      01341                         bsf             RadioModeNextPrevFlags, PRESCALER_PRESCALER
+                      01342                         movlw   MAKE_BEFORE_BREAK_RADIO_NEXT
+                      01343                 endif
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01344                         goto    TEWPC
+                      01345 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01346 RadioPrev
+                      01347                 ifdef CONF_RADIO_PREV
+                      01348                         call    PrevRadioPin
+                      01349                         ;movf   RadioPinActivated, W
+                      01350                         ;call   SetBitInOutputMask
+                      01351                 if ICE  ; -------------------------------------
+                      01352                         nop             ; Breakpoint :
+                      01353                 endif   ; -------------------------------------
+                      01354                         bsf             RadioModeNextPrevFlags, PRESCALER_PRESCALER
+                      01355                         movlw   MAKE_BEFORE_BREAK_RADIO_NEXT
+                      01356                 endif
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01357                         goto    TEWPC
+                      01358 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01359 TypeEndsWithPrescaler
+Error[113]  : Symbol not previously defined (MAKE_BEFORE_BREAK_TICKS)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01360                         movlw   MAKE_BEFORE_BREAK_TICKS
+Error[150]  : Labels must be defined in a code or data section when making an object file
+Error[113]  : Symbol not previously defined (RadioPrescaler)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01361 TEWPC           movwf   RadioPrescaler
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01362 TypeEnds
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 40
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01363                         return
+                      01364 
+                      01365 
+                      01366 
+                      01367 
+                      01368                 ; -------------------------------------------------------------------
+                      01369                 ; DeactivateOutputMask
+                      01370                 ; -------------------------------------------------------------
+                      01371                 ; Input  : "CurrentConf" and "CurrentPin"
+                      01372                 ; Output :
+                      01373                 ;
+Warning[207]: Found label after column 1. (ForcePageAlign)
+Error[122]  : Illegal opcode (.12)
+                      01374                         ForcePageAlign  .12
+                      01375 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01376 DeactivateOutputMask
+                      01377 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01378                         movlw   DeactivateOutputMask / 0x100
+Error[113]  : Symbol not previously defined (PCLATH)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01379                         movwf   PCLATH
+                      01380                          ;
+Error[113]  : Symbol not previously defined (CurrentConf)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01381                         movf    CurrentConf, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01382                         call    ModeConf2Int
+Error[113]  : Symbol not previously defined (PCL)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01383                         addwf   PCL, F
+Error[113]  : Symbol not previously defined (MODE_TABLE_CONF)
+                      01384                 if MODE_TABLE_CONF == 1
+                      01385                         goto    DeactStandard
+                      01386                         goto    DeactToggle
+                      01387                         goto    DeactRadio
+                      01388                         goto    DeactBiToggle
+                      01389                         goto    DeactBiToggleDelayed
+                      01390                 endif
+Error[113]  : Symbol not previously defined (MODE_TABLE_CONF)
+                      01391                 if MODE_TABLE_CONF == .100
+                      01392                         goto    DeactStandard
+                      01393                         goto    DeactToggle
+                      01394                         goto    DeactRadio
+                      01395                         goto    DeactBiToggle
+                      01396                         goto    DeactBiToggleDelayed
+                      01397                         goto    DeactRadioNext
+                      01398                         goto    DeactRadioPrev
+                      01399                 endif
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 41
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01400 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+Error[151]  : Operand contains unresolvable labels or is too complex
+                      01401                 if DeactivateOutputMask / 0x0100 != $ / 0x0100
+                      01402                         error "Page fault in DeactivateOutputMask"
+                      01403                 endif
+                      01404 
+                      01405 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01406 DeactStandard
+                      01407 
+Error[113]  : Symbol not previously defined (CurrentPin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01408                         movf    CurrentPin, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01409                         call    ClearBitInOutputMask
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01410 DeactToggle
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01411 DeactRadio
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01412 DeactBiToggle
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01413 DeactBiToggleDelayed
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01414 DeactRadioNext
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01415 DeactRadioPrev
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01416                         return
+                      01417 
+                      01418 
+                      01419 
+                      01420                 ; -------------------------------------------------------------------
+                      01421                 ; SaveCurrentOutputLevels
+                      01422                 ; -------------------------------------------------------------
+                      01423                 ; The state of the output pins are saved in eeprom if changed
+                      01424                 ;
+                      01425                 ; Input  :
+                      01426                 ; Output :
+                      01427                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01428 SaveCurrentOutputLevels
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01429                         movlw   .4
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01430                         movwf   TempIndex
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01431 scol_loop
+Error[113]  : Symbol not previously defined (EepOutputPinsQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 42
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  01432                         movlw   EepOutputPinsQuad - 1
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01433                         addwf   TempIndex, W
+Error[113]  : Symbol not previously defined (EepromReadW)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01434                         call    EepromReadW
+Error[113]  : Symbol not previously defined (Temporary)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01435                         movwf   Temporary
+                      01436 
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01437                         movlw   OutputsMask32 - 1
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01438                         addwf   TempIndex, W
+Error[113]  : Symbol not previously defined (FSR)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01439                         movwf   FSR
+Error[113]  : Symbol not previously defined (INDF)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01440                         movf    INDF, W
+                      01441 
+Error[113]  : Symbol not previously defined (Temporary)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01442                         subwf   Temporary, W
+                      01443 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01444                         skpnz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01445                         goto    this_is_equal
+                      01446 
+                      01447                          ; they differed, save new
+                      01448 
+Error[113]  : Symbol not previously defined (EepOutputPinsQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01449                         movlw   EepOutputPinsQuad - 1
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01450                         addwf   TempIndex, W
+Error[113]  : Symbol not previously defined (EepromSetAddress)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01451                         call    EepromSetAddress
+                      01452 
+Error[113]  : Symbol not previously defined (INDF)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01453                         movf    INDF, W
+Warning[207]: Found label after column 1. (di)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01454                         di
+Error[113]  : Symbol not previously defined (EepromWriteW)
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 43
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01455                         call    EepromWriteW
+Warning[207]: Found label after column 1. (ei)
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01456                         ei
+                      01457 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01458 this_is_equal
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01459                         decfsz  TempIndex, F
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01460                         goto    scol_loop
+                      01461 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01462                         return
+                      01463 
+                      01464 
+                      01465 
+                      01466 
+                      01467 
+                      01468                 ; ClearTableOutputLevels
+                      01469                 ; ---------------------------------------------------
+                      01470                 ; Clears output mask registers and writes a (cleared)
+                      01471                 ; copy to table.
+                      01472                 ; See    : "SetOutputsFromMasks" to set output ports
+                      01473                 ; Input  :
+                      01474                 ; Output :
+                      01475                 ; Stack  :
+                      01476 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01477 ClearTableOutputLevels
+                      01478 
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01479                         clrf    OutputsMask32+0
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01480                         clrf    OutputsMask32+1
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01481                         clrf    OutputsMask32+2
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01482                         clrf    OutputsMask32+3
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01483                         call    SaveCurrentOutputLevels
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01484                         return
+                      01485 
+                      01486 
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 44
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01487                 ; RestoreOutputLevelMask
+                      01488                 ; ---------------------------------------------------
+                      01489                 ; The 2*16 bit cells "OutputsMask32" are loaded from eeprom
+                      01490                 ; Typically called at cold start.
+                      01491                 ;
+                      01492                 ; Input  : EepOutputPinsQuad
+                      01493                 ; Output : OutputsMask32
+                      01494                 ; Stack  : -
+                      01495                 ; Intrs  : -
+                      01496 
+                      01497 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01498 RestoreOutputLevelMask
+                      01499 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01500                         movlw   .4
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01501                         movwf   TempIndex
+                      01502 
+Error[113]  : Symbol not previously defined (OutputsMask32)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01503                         movlw   OutputsMask32 - 1
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01504                         addwf   TempIndex, W
+Error[113]  : Symbol not previously defined (FSR)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01505                         movwf   FSR
+                      01506 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01507 rtol_load_next
+Error[113]  : Symbol not previously defined (EepOutputPinsQuad)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01508                         movlw   EepOutputPinsQuad - 1
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01509                         addwf   TempIndex, W
+Error[113]  : Symbol not previously defined (EepromReadW)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01510                         call    EepromReadW
+                      01511 
+Error[113]  : Symbol not previously defined (INDF)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01512                         movwf   INDF
+Error[113]  : Symbol not previously defined (FSR)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01513                         decf    FSR, F
+                      01514 
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01515                         decfsz  TempIndex, F
+Error[151]  : Operand contains unresolvable labels or is too complex
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 45
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01516                         goto    rtol_load_next
+                      01517 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01518                         return
+                      01519 
+                      01520 
+                      01521 
+                      01522 
+                      01523 
+                      01524                 ; -------------------------------------------------------------------
+                      01525                 ; GetFirstCodeAndConf
+                      01526                 ; GetNextCodeAndConf
+                      01527                 ; -------------------------------------------------------------
+                      01528                 ; Find assignments for the specified i/o pin
+                      01529                 ; Input  : Pin number in W
+                      01530                 ; Output : Succes, C = 1 and W = configuration byte (incl pin)
+                      01531                 ;          Read_Low & Read_High will contain IR code
+                      01532                 ;              Fail, C = 0
+                      01533                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01534 GetFirstCodeAndConf
+                      01535 
+Error[113]  : Symbol not previously defined (SubCallParameter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01536                 movwf   SubCallParameter                ; Save pin number
+                      01537 
+Error[113]  : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01538                         movlw   TABLE_NOF_CELLS
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01539                         movwf   Counter
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01540                         clrf    TempIndex
+                      01541 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01542 GFCC_NextWord
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01543                         movf    TempIndex, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01544                         call    SetTablePointer
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01545                         call    PeekTableCellPin
+                      01546 
+                      01547                          ; Check if pin number matches
+                      01548                          ;
+Error[113]  : Symbol not previously defined (Read_Conf_Pin)
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 46
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  01549                         movf    Read_Conf_Pin, W
+Error[113]  : Symbol not previously defined (SubCallParameter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01550                         subwf   SubCallParameter, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01551                         skpz
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01552                         goto    GetNextCodeAndConf     ; no
+                      01553 
+                      01554                          ; Match ! Return configuration if its a valid cell
+                      01555                          ;
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01556                         movf    TempIndex, W
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01557                         call    SetTablePointer
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01558                         call    PeekTableCell
+                      01559 
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01560                         call    TestIfCellValid
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01561                         skpc
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01562                         goto    GetCodeAndConfExitNotFound
+                      01563 
+Error[113]  : Symbol not previously defined (Read_Conf_Mode)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01564                         movf    Read_Conf_Mode, W
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01565                         setc
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01566                         goto    GetCodeAndConfExit
+                      01567 
+                      01568 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01569 GetNextCodeAndConf
+                      01570 
+Error[113]  : Symbol not previously defined (TempIndex)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01571                         incf    TempIndex, F
+                      01572                          ;
+Error[113]  : Symbol not previously defined (Counter)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01573                         decfsz  Counter, F
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 47
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000                  01574                         goto    GFCC_NextWord
+                      01575                          ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01576 GetCodeAndConfExitNotFound
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01577                         clrc
+                      01578 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01579 GetCodeAndConfExit
+                      01580 
+Error[113]  : Symbol not previously defined (ICE)
+                      01581                 if ICE  ; -------------------------------------
+                      01582                         nop             ; Breakpoint :
+                      01583                 endif   ; -------------------------------------
+                      01584 
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01585                         return ; GetNextCodeAndConf
+                      01586 
+                      01587 
+                      01588 
+                      01589 
+                      01590                 ; -------------------------------------------------------------------
+                      01591                 ; CheckForRadioAssignment
+                      01592                 ; -------------------------------------------------------------
+                      01593                 ; Check if the specified pin has a radio assignment
+                      01594                 ; Input  : Pin number in W
+                      01595                 ; Output : Succes, C = 1 and W = configuration byte (incl pin)
+                      01596                 ;          Read_Low & Read_High will contain IR code
+                      01597                 ;              Fail, C = 0
+                      01598                 ;
+                      01599 
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01600 CheckForRadioAssignment
+                      01601                 ifdef CONF_RADIO_MODE
+                      01602                 movwf   SubCallParameter
+                      01603 
+                      01604                         ; Prepare to sweep the entire assignments table
+                      01605                         movlw   TABLE_NOF_CELLS
+                      01606                         movwf   Counter2
+                      01607                         clrf    TempIndex2
+                      01608 
+                      01609 CFR_NextWord
+                      01610                         movf    TempIndex2, W
+                      01611                         call    SetTablePointer
+                      01612                         call    PeekTableCellPin
+                      01613 
+                      01614                          ; Check if pin number matches
+                      01615                          ;
+                      01616                         movf    Read_Conf_Pin, W
+                      01617                         subwf   SubCallParameter, W
+                      01618                         skpz
+                      01619                         goto    CFR_BadPin
+                      01620 
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 48
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01621                          ; Match. Check if radio
+                      01622                          ;
+                      01623                         movf    TempIndex2, W
+                      01624                         call    SetTablePointer
+                      01625                         call    PeekTableCell
+                      01626 
+                      01627                         movf    Read_Conf_Mode, W
+                      01628                         call    ModeConf2Int
+                      01629                         sublw   CONF_RADIO_MODE
+                      01630                         skpz
+                      01631                         goto    CFR_BadPin
+                      01632 
+                      01633                          ; Yes, its a radio
+                      01634                         setc
+                      01635                         goto    CFR_Exit
+                      01636 
+                      01637 CFR_BadPin
+                      01638                         incf    TempIndex2, F
+                      01639                          ;
+                      01640                         decfsz  Counter2, F
+                      01641                         goto    CFR_NextWord
+                      01642                          ;
+                      01643                 endif
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01644                         clrc
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01645 CFR_Exit
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01646                         return
+                      01647 
+                      01648 
+                      01649 
+                      01650                 ; SetOutputsFromMasks
+                      01651                 ; ---------------------------------------------------
+                      01652                 ; Sets the 16 output pin levels as given by "OutputsMaskXxx"
+                      01653                 ;
+Error[150]  : Labels must be defined in a code or data section when making an object file
+0000                  01654 SetOutputsFromMasks
+Error[113]  : Symbol not previously defined (ICE)
+                      01655                 if ICE  ; -------------------------------------
+                      01656                         nop             ; Breakpoint :
+                      01657                         nop             ;
+                      01658                 endif   ; -------------------------------------
+                      01659 
+Warning[207]: Found label after column 1. (SetPgeF)
+Error[122]  : Illegal opcode (FAR_CODE_PAGE)
+                      01660                         SetPgeF FAR_CODE_PAGE
+Error[113]  : Symbol not previously defined (__PAGE__)
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  01661                         goto    Far_SetOutputsFromMasks & __PAGE__
+                      01662 
+                      01663 
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 49
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01664 
+                      01665 
+                      01666 ; -----------------------------------------------------------------------------
+                      01667 ;    U T I L I T Y    C O D E    P A G E       ("Far_")
+                      01668 ; -----------------------------------------------------------------------------
+                      01669 
+                      01670 
+Error[113]  : Symbol not previously defined (FAR_CODE_PAGE)
+                      01671                         org             FAR_CODE_PAGE
+                      01672 
+                      01673 
+                      01674 CheckIfProhibited       macro pin
+                      01675                 ifdef CONF_RADIO_NEXT
+                      01676                         btfss   RadioModeNextPin, BIT7
+                      01677                         goto    $+.6    ; check_prev
+                      01678                         movf    RadioModeNextPin, W
+                      01679                         andlw   0x7F
+                      01680                         sublw   pin
+                      01681                         skpnz
+                      01682                         goto    $+.9    ; prohibited
+                      01683 ;check_prev
+                      01684                         btfss   RadioModePrevPin, BIT7
+                      01685                         goto    $+.9    ; not_prohibited
+                      01686                         movf    RadioModePrevPin, W
+                      01687                         andlw   0x7F
+                      01688                         sublw   pin
+                      01689                         skpnz
+                      01690                         goto    $+.2    ; prohibited
+                      01691                         goto    $+.3    ; not_prohibited
+                      01692 ;prohibited
+                      01693                         setc
+                      01694                         goto    $+.3    ; check_exit
+                      01695 ;not_prohibited
+                      01696                         nop                             ; FIXIT
+                      01697                         clrc
+                      01698 ;check_exit
+                      01699                 endif
+                      01700                         endm
+                      01701 
+                      01702 
+                      01703 
+                      01704 
+                      01705 SetOutputPin macro      port, bit, pin
+                      01706                         btfss   mask, bit
+                      01707                         goto    $ + 3
+                      01708                         bsf             port, pin
+                      01709                         goto    $ + 2
+                      01710                         bcf             port, pin
+                      01711                         endm
+                      01712 
+                      01713                 ; Far_SetOutputsFromMask
+                      01714                 ; ---------------------------------------------------
+                      01715                 ; See SetOutputsFromMasks
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 50
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01716                 ;
+                      01717 
+0000                  01718 Far_SetOutputsFromMasks
+                      01719 
+Error[113]  : Symbol not previously defined (OutputsMask32)
+  00000000            01720 mask            set  OutputsMask32+0
+                      01721 
+                      01722                 ; For pin0 and pin1 check if they are running as RadioNext and
+                      01723                 ; RadioPrev. If they are, then skip them, they are configured as
+                      01724                 ; inputs with external pullups.
+                      01725                 ;
+                      01726                 ifdef CONF_RADIO_NEXT
+                      01727                         CheckIfProhibited PIN0
+                      01728                         skpnc
+                      01729                         goto    SkipBit1
+                      01730                 endif
+                      01731                         SetOutputPin    PIN0_PORT, BIT0, PIN0
+Error[113]  : Symbol not previously defined (BIT0)
+0000   1C00               M                         btfss   mask, BIT0
+0001   2???               M                         goto    $ + 3
+Error[113]  : Symbol not previously defined (PIN0_PORT)
+Error[113]  : Symbol not previously defined (PIN0)
+0002   1400               M                         bsf             PIN0_PORT, PIN0
+0003   2???               M                         goto    $ + 2
+Error[113]  : Symbol not previously defined (PIN0_PORT)
+Error[113]  : Symbol not previously defined (PIN0)
+0004   1000               M                         bcf             PIN0_PORT, PIN0
+0005                  01732 SkipBit1
+                      01733 
+                      01734                 ifdef PIN1_PORT
+                      01735                 ifdef CONF_RADIO_PREV
+                      01736                 jkjl
+                      01737                         CheckIfProhibited PIN1
+                      01738                         skpnc
+                      01739                         goto    SkipBit2
+                      01740                 endif
+                      01741                         SetOutputPin    PIN1_PORT, BIT1, PIN1
+                      01742                 endif
+0005                  01743 SkipBit2
+                      01744 
+                      01745                 ifdef PIN2_PORT
+                      01746                         SetOutputPin    PIN2_PORT, BIT2, PIN2
+                      01747                         SetOutputPin    PIN3_PORT, BIT3, PIN3
+                      01748                 endif
+                      01749                 ifdef PIN4_PORT
+                      01750                         SetOutputPin    PIN4_PORT, BIT4, PIN4
+                      01751                         SetOutputPin    PIN5_PORT, BIT5, PIN5
+                      01752                         SetOutputPin    PIN6_PORT, BIT6, PIN6
+                      01753                         SetOutputPin    PIN7_PORT, BIT7, PIN7
+                      01754 
+                      01755 mask            set  OutputsMask32+1
+                      01756 
+                      01757                         SetOutputPin    PIN8_PORT, BIT0, PIN8
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 51
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01758                         SetOutputPin    PIN9_PORT, BIT1, PIN9
+                      01759                         SetOutputPin    PIN10_PORT, BIT2, PIN10
+                      01760                         SetOutputPin    PIN11_PORT, BIT3, PIN11
+                      01761 
+                      01762                 if ICE  ; -------------------------------------
+                      01763                         nop             ; Breakpoint :
+                      01764                         nop             ;
+                      01765                 endif   ; -------------------------------------
+                      01766 
+                      01767                         btfss   Flags, PROGRAM_MODE_ON
+                      01768             goto    SetOutputsNormalMode
+                      01769 
+                      01770                 ; Programming mode, all are outputs
+                      01771                 ;
+                      01772                         SetOutputPin    PIN12_PORT, BIT4, PIN12
+                      01773                 if ICE == false
+                      01774                         SetOutputPin    PIN13_PORT, BIT5, PIN13
+                      01775                         SetOutputPin    PIN14_PORT, BIT6, PIN14
+                      01776                         SetOutputPin    PIN15_PORT, BIT7, PIN15
+                      01777                 endif
+                      01778                         goto    SetBiToggleEnds
+                      01779 
+                      01780 SetOutputsNormalMode
+                      01781                         ; If any of 8-11 are running in bitoggle mode, i.e. having 12-15 as
+                      01782                 ; slave inputs, then dont write to slave inputs (which are inputs
+                      01783                 ; with pullups to vcc)
+                      01784                         ;
+                      01785             btfsc   BiToggleRegister, BIT0
+                      01786                         goto    no_12_set
+                      01787                         SetOutputPin    PIN12_PORT, BIT4, PIN12
+                      01788 no_12_set
+                      01789 
+                      01790                 if ICE == false
+                      01791                         btfsc   BiToggleRegister, BIT1
+                      01792                         goto    no_13_set
+                      01793                         SetOutputPin    PIN13_PORT, BIT5, PIN13
+                      01794 no_13_set
+                      01795 
+                      01796             btfsc   BiToggleRegister, BIT2
+                      01797                         goto    no_14_set
+                      01798                         SetOutputPin    PIN14_PORT, BIT6, PIN14
+                      01799 no_14_set
+                      01800 
+                      01801             btfsc   BiToggleRegister, BIT3
+                      01802                         goto    no_15_set
+                      01803                         SetOutputPin    PIN15_PORT, BIT7, PIN15
+                      01804 no_15_set
+                      01805                 endif
+                      01806 
+                      01807 
+                      01808 SetBiToggleEnds
+                      01809 
+                      01810                 endif
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 52
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      01811 
+Error[113]  : Symbol not previously defined (ICE)
+                      01812                 if ICE  ; -------------------------------------
+                      01813                         nop             ; Breakpoint :
+                      01814                         nop             ;
+                      01815                 endif   ; -------------------------------------
+                      01816 
+Warning[207]: Found label after column 1. (SetPage0)
+0005                  01817                         SetPage0
+0005   0008           01818                         return
+                      01819 
+                      01820                         ; Far_SetOutputsFromMask
+                      01821 
+                      01822 
+Error[129]  : Expected (END)
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 53
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ActivateOutputMask                00000000
+AddPinDataToTable                 00000000
+BiToggle                          00000000
+BiToggleDelayed                   00000000
+BitToMask                         00000000
+CFR_Exit                          00000000
+CheckForRadioAssignment           00000000
+CheckIfPinExit                    00000000
+CheckIfPinIsInputOnly             00000000
+CheckIfProhibited                 
+CheckNextWord                     00000000
+ClearBitInOutputMask              00000000
+ClearPinFromTable                 00000000
+ClearRadioChannels                00000000
+ClearTableOutputLevels            00000000
+DeactBiToggle                     00000000
+DeactBiToggleDelayed              00000000
+DeactRadio                        00000000
+DeactRadioNext                    00000000
+DeactRadioPrev                    00000000
+DeactStandard                     00000000
+DeactToggle                       00000000
+DeactivateOutputMask              00000000
+DefineWriteNullCell               00000000
+Far_SetOutputsFromMasks           00000000
+FindCodeAndConfAndPinInTable      00000000
+FindModePinInTable                00000000
+FoundUnexpectedPin                00000000
+GFCC_NextWord                     00000000
+GetCodeAndConfExit                00000000
+GetCodeAndConfExitNotFound        00000000
+GetFirstCodeAndConf               00000000
+GetFirstPinNumberFromIRCode       00000000
+GetNextCodeAndConf                00000000
+GetNextPinNumberFromIRCode        00000000
+LookForShortedPins                00000000
+LookForShortedPinsExit            00000000
+ModeConf2Int                      00000000
+ModeInt2Conf                      00000000
+NextRadioPin                      00000000
+PeekTableCell                     00000000
+PeekTableCellIRLow                00000000
+PeekTableCellPin                  00000000
+PokeTableCell                     00000000
+PrevRadioPin                      00000000
+Radio                             00000000
+RadioNext                         00000000
+RadioPrev                         00000000
+ReadModeConf                      00000000
+ResetTable                        00000000
+RestoreOutputLevelMask            00000000
+ReverseBitInOutputMask            00000000
+SaveCurrentOutputLevels           00000000
+MPASM  5.51                       RC5UTIL.ASM   12-16-2020  11:12:01         PAGE 54
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SetBank0                          00000000
+SetBitInOutputMask                00000000
+SetOutputPin                      
+SetOutputsFromMasks               00000000
+SetPage0                          00000005
+SetPage0Auto                      00000000
+SetTablePointer                   00000000
+SkipBit1                          00000005
+SkipBit2                          00000005
+Standard                          00000000
+TEWPC                             00000000
+TestIfCellValid                   00000000
+TestOutputPin                     
+Toggle                            00000000
+TypeEnds                          00000000
+TypeEndsWithPrescaler             00000000
+_.org_0_0001                      00000001
+_.org_0_0003                      00000003
+__16F873                          00000001
+_n_exit                           00000000
+_not@12                           00000000
+_not@13                           00000000
+_not@14                           00000000
+_not@15                           00000000
+_p_exit                           00000000
+di                                00000000
+ei                                00000000
+etst_next_wod                     00000000
+etst_next_wor                     00000000
+etst_next_word                    00000000
+fcc_not_this                      00000000
+fmpt_exit                         00000000
+fmpt_next                         00000000
+fmpt_not_this                     00000000
+gotya                             00000000
+has_data                          00000000
+mask                              00000000
+not_null_cell                     00000000
+not_thisr                         00000000
+outta_here                        00000000
+pin_is_input                      00000000
+pin_is_output                     00000000
+rclr_next_word                    00000000
+rtol_load_next                    00000000
+scol_loop                         00000000
+shift_again                       00000000
+this_is_equal                     00000000
+zsdsadad                          00000000
+
+Errors   :   854
+Warnings :    24 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
