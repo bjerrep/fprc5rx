@@ -1,0 +1,7 @@
+Message[301] C:\FPRC5RX\725.ASM 38 : MESSAGE: (INFO: Release build)
+Message[301] C:\FPRC5RX\COMMON.INC 44 : MESSAGE: (Processor target is 16f873)
+Message[301] C:\FPRC5RX\725.ASM 322 : MESSAGE: (MODE_TABLE_CONF == 1)
+Warning[208] C:\FPRC5RX\725.ASM 352 : Label truncated at 32 characters. (VALUE_CONF_BI_TOGGLE_MODE_BOOT_DELAY)
+Warning[208] C:\FPRC5RX\725.ASM 365 : Label truncated at 32 characters. (VALUE_CONF_BI_TOGGLE_MODE_BOOT_DELAY)
+Message[301] C:\FPRC5RX\725.ASM 541 : MESSAGE: (INFO : Release)
+Message[301] C:\FPRC5RX\RC5UTIL.ASM 114 : MESSAGE: (Info: 16 pins available)

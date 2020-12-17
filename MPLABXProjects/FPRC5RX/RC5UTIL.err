@@ -1,0 +1,878 @@
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 75 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 77 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 79 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 48 : Symbol not previously defined (BIT0)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 48 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 49 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 49 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 50 : Symbol not previously defined (PIN0_PORT)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 50 : Symbol not previously defined (PIN0)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 50 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 51 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 51 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 52 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 52 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 54 : Symbol not previously defined (PIN0_PORT)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 54 : Symbol not previously defined (PIN0)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 54 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 55 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 55 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 56 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 56 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 58 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 122 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 123 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 123 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 127 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 197 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 199 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 201 : Symbol not previously defined (ICE)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 205 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 214 : Labels must be defined in a code or data section when making an object file
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 216 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 216 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 217 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 218 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 220 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 220 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 222 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 222 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 223 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 223 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 225 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 225 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 226 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 226 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 228 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 228 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 229 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 229 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 231 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 231 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 232 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 232 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 234 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 244 : Labels must be defined in a code or data section when making an object file
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 246 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 246 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 247 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 248 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 250 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 250 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 252 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 252 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 253 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 253 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 255 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 255 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 256 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 256 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 258 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 258 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 259 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 259 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 261 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 261 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 262 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 262 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 264 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 274 : Labels must be defined in a code or data section when making an object file
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 276 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 276 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 277 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 278 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 281 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 281 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 283 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 283 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 284 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 284 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 286 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 286 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 287 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 287 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 289 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 289 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 290 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 290 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 292 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 292 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 293 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 293 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 295 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 311 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 313 : Symbol not previously defined (TempStack)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 313 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 337 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 338 : Symbol not previously defined (TempStack)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 338 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 339 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 340 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 340 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 341 : Symbol not previously defined (BiToggleRegister)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 341 : Symbol not previously defined (BIT0)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 341 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 342 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 342 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 343 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 343 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 344 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 346 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 347 : Symbol not previously defined (TempStack)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 347 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 348 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 349 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 349 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 350 : Symbol not previously defined (BiToggleRegister)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 350 : Symbol not previously defined (BIT1)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 350 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 351 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 351 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 352 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 352 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 353 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 355 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 356 : Symbol not previously defined (TempStack)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 356 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 357 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 358 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 358 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 359 : Symbol not previously defined (BiToggleRegister)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 359 : Symbol not previously defined (BIT2)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 359 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 360 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 360 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 361 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 361 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 362 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 364 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 365 : Symbol not previously defined (TempStack)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 365 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 366 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 367 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 367 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 368 : Symbol not previously defined (BiToggleRegister)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 368 : Symbol not previously defined (BIT3)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 368 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 369 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 369 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 370 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 370 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 371 : Labels must be defined in a code or data section when making an object file
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 373 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 373 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 375 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 376 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 377 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 377 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 379 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 380 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 382 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 384 : Symbol not previously defined (TempStack)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 384 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 385 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 398 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 400 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 402 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 402 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 403 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 403 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 404 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 404 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 405 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 405 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 408 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 410 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 410 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 410 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 411 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 411 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 412 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 412 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 413 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 413 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 415 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 416 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 417 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 418 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 418 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 420 : Symbol not previously defined (ICE)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 424 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 438 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 439 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 439 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 440 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 441 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 441 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 442 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 442 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 444 : Symbol not previously defined (FLASH_TABLE)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 445 : Symbol not previously defined (AssignmentsTable)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 445 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 446 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 446 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 449 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 464 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 466 : Symbol not previously defined (FLASH_TABLE)
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 515 : Found label after column 1. (zsdsadad)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 515 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 517 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 517 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 518 : Symbol not previously defined (SetEepAdr)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 518 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 519 : Found label after column 1. (SetBank0)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 519 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 520 : Symbol not previously defined (Write_Low)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 520 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 521 : Symbol not previously defined (EepWriteW)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 521 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 522 : Found label after column 1. (SetBank0)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 522 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 524 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 524 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 525 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 526 : Symbol not previously defined (SetEepAdr)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 526 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 527 : Found label after column 1. (SetBank0)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 527 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 528 : Symbol not previously defined (Write_High)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 528 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 529 : Symbol not previously defined (EepWriteW)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 529 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 530 : Found label after column 1. (SetBank0)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 530 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 532 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 532 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 533 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 534 : Symbol not previously defined (SetEepAdr)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 534 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 535 : Found label after column 1. (SetBank0)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 535 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 536 : Symbol not previously defined (Write_Conf)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 536 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 537 : Symbol not previously defined (EepWriteW)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 537 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 538 : Found label after column 1. (SetBank0)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 538 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 540 : Symbol not previously defined (ICE)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 545 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 560 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 562 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 562 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 563 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 564 : Found label after column 1. (di)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 564 : Labels must be defined in a code or data section when making an object file
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 565 : Found label after column 1. (SetPgeF)
+Error[122]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 565 : Illegal opcode (FLASH_CODE_PAGE)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 566 : Symbol not previously defined (FlashSetAdrZeroPage)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 566 : Symbol not previously defined (__PAGE__)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 566 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 567 : Symbol not previously defined (FlashRead)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 567 : Symbol not previously defined (__PAGE__)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 567 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 568 : Found label after column 1. (SetPage0Auto)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 568 : Labels must be defined in a code or data section when making an object file
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 569 : Found label after column 1. (ei)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 569 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 571 : Symbol not previously defined (Read_Conf_Pin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 571 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 573 : Symbol not previously defined (ICE)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 578 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 581 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 584 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 584 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 586 : Found label after column 1. (di)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 586 : Labels must be defined in a code or data section when making an object file
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 587 : Found label after column 1. (SetPgeF)
+Error[122]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 587 : Illegal opcode (FLASH_CODE_PAGE)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 588 : Symbol not previously defined (FlashSetAdrZeroPage)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 588 : Symbol not previously defined (__PAGE__)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 588 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 589 : Symbol not previously defined (FlashRead)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 589 : Symbol not previously defined (__PAGE__)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 589 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 590 : Found label after column 1. (SetPage0Auto)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 590 : Labels must be defined in a code or data section when making an object file
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 591 : Found label after column 1. (ei)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 591 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 593 : Symbol not previously defined (Read_Low)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 593 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 595 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 598 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 600 : Symbol not previously defined (FLASH_TABLE)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 646 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 646 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 647 : Symbol not previously defined (EepReadW)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 647 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 648 : Found label after column 1. (SetBank0)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 648 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 649 : Symbol not previously defined (Read_Low)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 649 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 651 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 651 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 652 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 653 : Symbol not previously defined (EepReadW)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 653 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 654 : Found label after column 1. (SetBank0)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 654 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 655 : Symbol not previously defined (Read_High)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 655 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 657 : Symbol not previously defined (TablePointer)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 657 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 658 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 659 : Symbol not previously defined (EepReadW)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 659 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 660 : Found label after column 1. (SetBank0)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 660 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 661 : Symbol not previously defined (Read_Conf)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 661 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 663 : Symbol not previously defined (ICE)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 668 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 682 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 683 : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 683 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 684 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 684 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 686 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 686 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 689 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 690 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 690 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 691 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 691 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 692 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 692 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 694 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 694 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 696 : Symbol not previously defined (ICE)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 701 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 702 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 702 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 706 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 706 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 709 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 710 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 712 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 714 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 714 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 716 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 716 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 717 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 717 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 720 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 721 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 734 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 736 : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 736 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 737 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 737 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 739 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 739 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 742 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 743 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 743 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 744 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 744 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 745 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 745 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 747 : Symbol not previously defined (Read_Low)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 747 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 748 : Symbol not previously defined (Write_Low)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 748 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 749 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 750 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 750 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 752 : Symbol not previously defined (Read_High)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 752 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 753 : Symbol not previously defined (Write_High)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 753 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 754 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 755 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 755 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 757 : Symbol not previously defined (Read_Conf_Mode)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 757 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 758 : Symbol not previously defined (Write_Conf_Mode)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 758 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 759 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 760 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 760 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 762 : Symbol not previously defined (Read_Conf_Pin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 762 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 763 : Symbol not previously defined (Write_Conf_Pin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 763 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 764 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 765 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 765 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 769 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 770 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 773 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 774 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 774 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 776 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 776 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 777 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 777 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 781 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 782 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 794 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 796 : Symbol not previously defined (Write_Conf_Mode)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 796 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 798 : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 798 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 799 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 799 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 800 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 800 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 802 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 803 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 803 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 804 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 804 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 805 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 805 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 807 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 807 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 808 : Symbol not previously defined (Write_Conf_Mode)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 808 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 809 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 810 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 810 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 814 : Symbol not previously defined (Read_Conf_Pin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 814 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 815 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 816 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 816 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 819 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 820 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 820 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 822 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 822 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 823 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 823 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 827 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 828 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 829 : Symbol not previously defined (ICE)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 833 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 847 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 847 : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 847 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 848 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 848 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 850 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 850 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 852 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 852 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 854 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 855 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 855 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 856 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 856 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 858 : Symbol not previously defined (ICE)
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 863 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 863 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 865 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 865 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 867 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 867 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 868 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 868 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 870 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 882 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 884 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 885 : Symbol not previously defined (Write_Low)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 885 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 886 : Symbol not previously defined (Write_High)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 886 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 887 : Symbol not previously defined (Write_Conf_Mode)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 887 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 888 : Symbol not previously defined (Write_Conf_Pin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 888 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 889 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 903 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 905 : Symbol not previously defined (Pin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 905 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 907 : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 907 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 908 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 908 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 910 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 910 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 912 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 914 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 914 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 915 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 915 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 916 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 916 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 918 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 919 : Symbol not previously defined (Read_Conf_Pin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 919 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 920 : Symbol not previously defined (Pin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 920 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 922 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 923 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 923 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 927 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 927 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 930 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 931 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 931 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 932 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 932 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 933 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 949 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 951 : Symbol not previously defined (Read_Low)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 951 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 952 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 953 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 954 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 954 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 956 : Symbol not previously defined (Read_High)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 956 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 957 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 958 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 959 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 959 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 961 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 962 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 963 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 964 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 965 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 983 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1039 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1051 : Labels must be defined in a code or data section when making an object file
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1076 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1077 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1088 : Labels must be defined in a code or data section when making an object file
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1113 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1114 : Symbol not previously defined (ICE)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1119 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1134 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1136 : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1136 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1137 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1137 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1138 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1138 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1141 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1142 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1142 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1143 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1143 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1144 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1144 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1148 : Symbol not previously defined (Read_Low)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1148 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1149 : Symbol not previously defined (NewIrLowByte)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1149 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1150 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1151 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1151 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1153 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1153 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1154 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1154 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1155 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1155 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1159 : Symbol not previously defined (Read_High)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1159 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1160 : Symbol not previously defined (NewIrHighByte)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1160 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1161 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1162 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1162 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1166 : Symbol not previously defined (Read_Conf_Mode)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1166 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1167 : Symbol not previously defined (IRPublicFlags)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1167 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1168 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1170 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1171 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1171 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1175 : Symbol not previously defined (Read_Conf_Pin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1175 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1176 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1177 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1177 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1180 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1182 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1182 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1184 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1184 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1185 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1185 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1187 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1189 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1191 : Symbol not previously defined (ICE)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1196 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1211 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1212 : Symbol not previously defined (Read_Conf_Mode)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1212 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1213 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1215 : Symbol not previously defined (NOF_CONF_MODES)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1219 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1220 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1232 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1233 : Symbol not previously defined (NOF_CONF_MODES)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1236 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1237 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1252 : Found label after column 1. (ForcePageAlign)
+Error[122]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1252 : Illegal opcode (.12)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1254 : Labels must be defined in a code or data section when making an object file
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1256 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1256 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1257 : Symbol not previously defined (PCLATH)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1257 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1259 : Symbol not previously defined (CurrentConf)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1259 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1260 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1260 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1261 : Symbol not previously defined (PCL)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1261 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1263 : Symbol not previously defined (MODE_TABLE_CONF)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1271 : Symbol not previously defined (MODE_TABLE_CONF)
+Error[101]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1283 : ERROR: (***** Missing table in Activate/DeactivateOutputMask *****)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1286 : Labels must be defined in a code or data section when making an object file
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1286 : Operand contains unresolvable labels or is too complex
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1291 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1292 : Symbol not previously defined (CurrentPin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1292 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1293 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1293 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1294 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1294 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1296 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1297 : Symbol not previously defined (CurrentPin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1297 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1298 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1298 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1299 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1299 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1301 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1303 : Symbol not previously defined (CurrentPin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1303 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1304 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1304 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1306 : Symbol not previously defined (CurrentPin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1306 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1307 : Symbol not previously defined (RadioPinActivated)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1307 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1309 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1309 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1311 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1315 : Symbol not previously defined (CurrentPin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1315 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1316 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1316 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1317 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1317 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1319 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1326 : Symbol not previously defined (CurrentPin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1326 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1327 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1327 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1329 : Symbol not previously defined (ShiftTempQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1329 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1330 : Symbol not previously defined (BiToggleRegBootDelay)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1330 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1331 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1331 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1333 : Labels must be defined in a code or data section when making an object file
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1344 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1344 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1346 : Labels must be defined in a code or data section when making an object file
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1357 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1357 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1359 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1360 : Symbol not previously defined (MAKE_BEFORE_BREAK_TICKS)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1360 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1361 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1361 : Symbol not previously defined (RadioPrescaler)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1361 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1362 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1363 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1374 : Found label after column 1. (ForcePageAlign)
+Error[122]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1374 : Illegal opcode (.12)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1376 : Labels must be defined in a code or data section when making an object file
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1378 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1378 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1379 : Symbol not previously defined (PCLATH)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1379 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1381 : Symbol not previously defined (CurrentConf)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1381 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1382 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1382 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1383 : Symbol not previously defined (PCL)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1383 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1384 : Symbol not previously defined (MODE_TABLE_CONF)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1391 : Symbol not previously defined (MODE_TABLE_CONF)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1401 : Labels must be defined in a code or data section when making an object file
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1401 : Operand contains unresolvable labels or is too complex
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1406 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1408 : Symbol not previously defined (CurrentPin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1408 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1409 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1409 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1410 : Labels must be defined in a code or data section when making an object file
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1411 : Labels must be defined in a code or data section when making an object file
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1412 : Labels must be defined in a code or data section when making an object file
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1413 : Labels must be defined in a code or data section when making an object file
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1414 : Labels must be defined in a code or data section when making an object file
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1415 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1416 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1428 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1429 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1430 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1430 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1431 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1432 : Symbol not previously defined (EepOutputPinsQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1432 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1433 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1433 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1434 : Symbol not previously defined (EepromReadW)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1434 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1435 : Symbol not previously defined (Temporary)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1435 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1437 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1437 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1438 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1438 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1439 : Symbol not previously defined (FSR)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1439 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1440 : Symbol not previously defined (INDF)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1440 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1442 : Symbol not previously defined (Temporary)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1442 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1444 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1445 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1445 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1449 : Symbol not previously defined (EepOutputPinsQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1449 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1450 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1450 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1451 : Symbol not previously defined (EepromSetAddress)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1451 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1453 : Symbol not previously defined (INDF)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1453 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1454 : Found label after column 1. (di)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1454 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1455 : Symbol not previously defined (EepromWriteW)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1455 : Executable code and data must be defined in an appropriate section
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1456 : Found label after column 1. (ei)
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1456 : Labels must be defined in a code or data section when making an object file
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1458 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1459 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1459 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1460 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1460 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1462 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1477 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1479 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1479 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1480 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1480 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1481 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1481 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1482 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1482 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1483 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1483 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1484 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1498 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1500 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1501 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1501 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1503 : Symbol not previously defined (OutputsMask32)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1503 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1504 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1504 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1505 : Symbol not previously defined (FSR)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1505 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1507 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1508 : Symbol not previously defined (EepOutputPinsQuad)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1508 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1509 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1509 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1510 : Symbol not previously defined (EepromReadW)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1510 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1512 : Symbol not previously defined (INDF)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1512 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1513 : Symbol not previously defined (FSR)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1513 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1515 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1515 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1516 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1516 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1518 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1534 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1536 : Symbol not previously defined (SubCallParameter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1536 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1538 : Symbol not previously defined (TABLE_NOF_CELLS)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1538 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1539 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1539 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1540 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1540 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1542 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1543 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1543 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1544 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1544 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1545 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1545 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1549 : Symbol not previously defined (Read_Conf_Pin)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1549 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1550 : Symbol not previously defined (SubCallParameter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1550 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1551 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1552 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1552 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1556 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1556 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1557 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1557 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1558 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1558 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1560 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1560 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1561 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1562 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1562 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1564 : Symbol not previously defined (Read_Conf_Mode)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1564 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1565 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1566 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1566 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1569 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1571 : Symbol not previously defined (TempIndex)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1571 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1573 : Symbol not previously defined (Counter)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1573 : Executable code and data must be defined in an appropriate section
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1574 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1574 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1576 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1577 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1579 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1581 : Symbol not previously defined (ICE)
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1585 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1600 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1644 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1645 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1646 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1654 : Labels must be defined in a code or data section when making an object file
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1655 : Symbol not previously defined (ICE)
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1660 : Found label after column 1. (SetPgeF)
+Error[122]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1660 : Illegal opcode (FAR_CODE_PAGE)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1661 : Symbol not previously defined (__PAGE__)
+Error[151]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1661 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1661 : Executable code and data must be defined in an appropriate section
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1671 : Symbol not previously defined (FAR_CODE_PAGE)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1720 : Symbol not previously defined (OutputsMask32)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1706 : Symbol not previously defined (BIT0)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1708 : Symbol not previously defined (PIN0_PORT)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1708 : Symbol not previously defined (PIN0)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1710 : Symbol not previously defined (PIN0_PORT)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1710 : Symbol not previously defined (PIN0)
+Error[113]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1812 : Symbol not previously defined (ICE)
+Warning[207] C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1817 : Found label after column 1. (SetPage0)
+Error[129]   C:\USERS\X3N0N\DESKTOP\FPRC5\RC5UTIL.ASM 1823 : Expected (END)
